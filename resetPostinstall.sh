@@ -20,5 +20,5 @@ EOF
 
 apt-get install slapd --reinstall
 
-rm -f /etc/yunohost/installed
+rm -rf /etc/yunohost/
 dpkg-reconfigure yunohost
