@@ -2,6 +2,8 @@
 . /usr/share/yunohost/helpers.d/string
 . /usr/share/yunohost/helpers.d/package
 
+service mysql stop
+
 new_pwd=$(ynh_string_random 10)
 
 ynh_package_is_installed "mariadb-server-10.0" \
@@ -20,3 +22,5 @@ echo "$new_pwd" >> /etc/yunohost/mysql
 chmod 400 /etc/yunohost/mysql
 
 mysqladmin -s -u root -p"$new_pwd" reload
+
+service mysql start
