@@ -18,7 +18,7 @@ EOF
 # reconfigure Debian package
 dpkg-reconfigure -freadline -u "$mysql_pkg" 2>&1
 
-echo "$new_pwd" >> /etc/yunohost/mysql
+echo "$new_pwd" > /etc/yunohost/mysql
 chmod 400 /etc/yunohost/mysql
 
 mysqladmin -s -u root -p"$new_pwd" reload
