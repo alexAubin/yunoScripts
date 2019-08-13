@@ -18,7 +18,11 @@ slapd slapd/invalid_config boolean true
 slapd slapd/backend select MDB
 EOF
 
+
+
 apt-get install slapd --reinstall
 
 rm -rf /etc/yunohost/
+rm -f /etc/ssl/certs/*yunohost*.pem
+rm -f /etc/ssl/*/yunohost_*.pem 
 dpkg-reconfigure yunohost
